@@ -1,10 +1,16 @@
 ## Milliygram based on Radolyn && Telegram
 
-
 ## Screenshots && Some features added based on @bytegroup_co
-<img src="img.png" alt="Screenshot" height="280px">
 
-![Untitled-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/b47e3387-f0fc-4d80-9c13-44be8f991b3a)
+<p float="left">
+  <!-- Statik PNG: width raqamli, px qo‘shmang -->
+  <img src="img.png" alt="Screenshot" width="280" />
+
+  <!-- GIF animatsiya: xuddi shunga teng width -->
+<img src="https://github.com/user-attachments/assets/b47e3387-f0fc-4d80-9c13-44be8f991b3a"
+alt="Demo animation"
+width="280" />
+</p>
 
 ### Localization
 
