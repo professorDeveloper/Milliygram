@@ -2,7 +2,7 @@
 
 
 ## Screenshots && Some features added based on @bytegroup_co
-![img.png](img.png)
+![img.png](img.png){:style="height:100px;width:100px"}
 ![Untitled-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/b47e3387-f0fc-4d80-9c13-44be8f991b3a)
 
 ### Localization
