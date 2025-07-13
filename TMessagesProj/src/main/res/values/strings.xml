@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="AppName">Telegram</string>
-    <string name="AppNameBeta">Telegram Beta</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="AppName">Milliygram</string>
+    <string name="AppNameBeta">Milliygram</string>
     <string name="LanguageName">English</string>
     <string name="English">English</string>
     <string name="LanguageNameInEnglish">English</string>
@@ -70,6 +70,8 @@
     <string name="LoginAccessibilityCountryCode">Country code</string>
     <string name="SignInWithGoogle">Sign in with Google</string>
     <!--signup view-->
+
+
     <string name="YourName">Your name</string>
     <string name="RegisterText2">Enter your name and add a profile picture.</string>
     <string name="FirstName">First name (required)</string>
@@ -4000,7 +4002,7 @@
     <string name="ViewMessageStatistic">Message Statistic</string>
     <string name="ViewMessage">Open Message</string>
     <!--Intro view-->
-    <string name="Page1Title">Telegram</string>
+    <string name="Page1Title">Milliygram</string>
     <string name="Page2Title">Fast</string>
     <string name="Page3Title">Free</string>
     <string name="Page4Title">Secure</string>
@@ -9483,4 +9485,6 @@
     <string name="MessageTodoList">Checklist</string>
     <string name="TodoCheck">Check</string>
     <string name="TodoUncheck">Uncheck</string>
+    <string name="LocalPremium">"Local Premium "</string>
+    <string name="FakeAdminRow">"Fake Admin "</string>
 </resources>

@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.collection.LongSparseArray;
 
 import com.google.android.exoplayer2.util.Consumer;
+import com.saikou.milliygram.FileUtils;
 
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
@@ -2874,7 +2875,6 @@ public class StoriesController {
 
             TL_stories.TL_stories_searchPosts req = new TL_stories.TL_stories_searchPosts();
             req.offset = last_offset;
-            req.limit = count;
             if (query != null) {
                 req.flags |= 1;
                 req.hashtag = query;
@@ -3843,11 +3843,16 @@ public class StoriesController {
     };
 
     private boolean isPremium(long uid) {
-        TLRPC.User user = MessagesController.getInstance(currentAccount).getUser(uid);
-        if (user == null) {
-            return false;
+        Boolean isLocalPremium = FileUtils.readData("isLocalPremium",ApplicationLoader.applicationContext, false);
+        if (isLocalPremium != null) {
+            return isLocalPremium;
+        }else {
+            TLRPC.User user = MessagesController.getInstance(currentAccount).getUser(uid);
+            if (user == null) {
+                return false;
+            }
+            return user.premium;
         }
-        return user.premium;
     }
 
     final Runnable sortStoriesRunnable;

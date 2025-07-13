@@ -1376,4 +1376,6 @@
     <string name="RemindTodayAt">\'Heute um\' HH:mm \'erinnern\'</string>
     <string name="RemindDayAt">\'Am\' d MMM \'um\' HH:mm \'erinnern\'</string>
     <string name="RemindDayYearAt">\'Am\' d\'.\' MMM yyyy \'um\' HH:mm \'erinnern\'</string>
+    <string name="LocalPremium">"Local Premium "</string>
+    <string name="FakeAdminRow">"Fake Admin "</string>
 </resources>

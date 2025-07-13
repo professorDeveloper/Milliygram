@@ -1085,4 +1085,6 @@
     <string name="RemindDayAt">\'Herinner op\' d MMM \'om\' HH:mm</string>
     <string name="RemindDayYearAt">\'Herinner op\' d MMM yyyy \'om\' HH:mm</string>
     <string name="BotsMenuTitle">Menu</string>
+    <string name="LocalPremium">"Local Premium "</string>
+    <string name="FakeAdminRow">"Fake Admin "</string>
 </resources>

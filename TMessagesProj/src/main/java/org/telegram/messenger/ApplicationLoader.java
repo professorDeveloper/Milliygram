@@ -155,6 +155,7 @@ public class ApplicationLoader extends Application {
         return false;
     }
 
+    @SuppressLint("SdCardPath")
     public static File getFilesDirFixed() {
         for (int a = 0; a < 10; a++) {
             File path = ApplicationLoader.applicationContext.getFilesDir();

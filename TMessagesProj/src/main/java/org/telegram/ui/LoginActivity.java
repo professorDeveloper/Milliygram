@@ -2469,14 +2469,14 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (allowTestBackend && activityMode == MODE_LOGIN) {
                 testBackendCheckBox = new CheckBoxCell(context, 2);
                 testBackendCheckBox.setText(getString(R.string.DebugTestBackend), "", testBackend = getConnectionsManager().isTestBackend(), false);
-                addView(testBackendCheckBox, LayoutHelper.createLinear(LayoutHelper.WRAP_CONTENT, LayoutHelper.MATCH_PARENT, Gravity.LEFT | Gravity.TOP, 16, 0, 16 + (LocaleController.isRTL && AndroidUtilities.isSmallScreen() ? Build.VERSION.SDK_INT >= 21 ? 56 : 60 : 0), 0));
+//                addView(testBackendCheckBox, LayoutHelper.createLinear(LayoutHelper.WRAP_CONTENT, LayoutHelper.MATCH_PARENT, Gravity.LEFT | Gravity.TOP, 16, 0, 16 + (LocaleController.isRTL && AndroidUtilities.isSmallScreen() ? Build.VERSION.SDK_INT >= 21 ? 56 : 60 : 0), 0));
                 bottomMargin -= 24;
                 testBackendCheckBox.setOnClickListener(v -> {
                     if (getParentActivity() == null) {
                         return;
                     }
                     CheckBoxCell cell = (CheckBoxCell) v;
-                    testBackend = !testBackend;
+                    testBackend = false;
                     cell.setChecked(testBackend, true);
 
                     boolean testBackend = allowTestBackend && getConnectionsManager().isTestBackend();

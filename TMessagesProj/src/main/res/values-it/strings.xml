@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AppName">Telegram</string>
-    <string name="AppNameBeta">Telegram Beta</string>
+    <string name="AppName">Milliygram</string>
+    <string name="AppNameBeta">Milliygram</string>
     <string name="LanguageName">Italiano</string>
     <string name="English">Inglese</string>
     <string name="LanguageNameInEnglish">Italian</string>
@@ -1538,4 +1538,6 @@
     <string name="RemindDayAt">\'Ricorda il\' d MMM \'alle\' HH:mm</string>
     <string name="RemindDayYearAt">\'Ricorda il\' d MMM yyyy \'alle\' HH:mm</string>
     <string name="BotsMenuTitle">Menu</string>
+    <string name="LocalPremium">"Local Premium "</string>
+    <string name="FakeAdminRow">"Fake Admin "</string>
 </resources>

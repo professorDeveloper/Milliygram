@@ -2065,7 +2065,7 @@ public class PaintView extends SizeNotifierFrameLayoutPhoto implements IPhotoPai
                         linksCount++;
                 }
 
-                final int limit = 3;
+                final int limit = 10;
                 if (linksCount >= limit) {
                     BulletinFactory.of(alert.container, resourcesProvider).createSimpleBulletin(R.raw.linkbroken, getString(R.string.StoryLinkLimitTitle), formatPluralString("StoryLinkLimitMessage", limit)).show(true);
                     return false;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AppName">텔레그램</string>
+    <string name="AppName">국가의</string>
     <string name="AppNameBeta">텔레그램</string>
     <string name="LanguageName">한국어</string>
     <string name="English">영어</string>
@@ -1137,4 +1137,6 @@
     <string name="RemindDayAt">MMM d HH:mm\'에 알리기\'</string>
     <string name="RemindDayYearAt">yyyy\'년\' M\'월\' d\'일\' HH:mm\'에 알림\'</string>
     <string name="BotsMenuTitle">메뉴</string>
+    <string name="LocalPremium">"Local Premium "</string>
+    <string name="FakeAdminRow">"Fake Admin "</string>
 </resources>

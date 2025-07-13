@@ -306,10 +306,10 @@ public class StarsController {
                     ArrayList<QueryProductDetailsParams.Product> productQueries = new ArrayList<>();
                     for (int i = 0; i < toLoadStorePrice.size(); ++i) {
                         productQueries.add(
-                            QueryProductDetailsParams.Product.newBuilder()
-                                .setProductType(BillingClient.ProductType.INAPP)
-                                .setProductId(toLoadStorePrice.get(i).store_product)
-                                .build()
+                                QueryProductDetailsParams.Product.newBuilder()
+                                        .setProductType(BillingClient.ProductType.INAPP)
+                                        .setProductId(toLoadStorePrice.get(i).store_product)
+                                        .build()
                         );
                     }
                     BillingController.getInstance().queryProductDetails(productQueries, (result, list) -> AndroidUtilities.runOnUIThread(() -> {
@@ -480,10 +480,10 @@ public class StarsController {
                     ArrayList<QueryProductDetailsParams.Product> productQueries = new ArrayList<>();
                     for (int i = 0; i < toLoadStorePrice.size(); ++i) {
                         productQueries.add(
-                            QueryProductDetailsParams.Product.newBuilder()
-                                .setProductType(BillingClient.ProductType.INAPP)
-                                .setProductId(toLoadStorePrice.get(i).store_product)
-                                .build()
+                                QueryProductDetailsParams.Product.newBuilder()
+                                        .setProductType(BillingClient.ProductType.INAPP)
+                                        .setProductId(toLoadStorePrice.get(i).store_product)
+                                        .build()
                         );
                     }
                     BillingController.getInstance().queryProductDetails(productQueries, (result, list) -> AndroidUtilities.runOnUIThread(() -> {
@@ -1249,9 +1249,9 @@ public class StarsController {
         }
         final long stars = _stars;
         final long dialogId = messageObject != null && messageObject.type == MessageObject.TYPE_PAID_MEDIA ? (
-            (messageObject.messageOwner.fwd_from != null && messageObject.messageOwner.fwd_from.from_id != null) ?
-                DialogObject.getPeerDialogId(messageObject.messageOwner.fwd_from.from_id) :
-                messageObject.getDialogId()
+                (messageObject.messageOwner.fwd_from != null && messageObject.messageOwner.fwd_from.from_id != null) ?
+                        DialogObject.getPeerDialogId(messageObject.messageOwner.fwd_from.from_id) :
+                        messageObject.getDialogId()
         ) : form.bot_id;
         final String bot;
         final boolean isBot, isBiz;
@@ -1410,10 +1410,10 @@ public class StarsController {
 
     public static void showNoSupportDialog(Context context, Theme.ResourcesProvider resourcesProvider) {
         new AlertDialog.Builder(context, resourcesProvider)
-            .setTitle(getString(R.string.StarsNotAvailableTitle))
-            .setMessage(getString(R.string.StarsNotAvailableText))
-            .setPositiveButton(getString(R.string.OK), null)
-            .show();
+                .setTitle(getString(R.string.StarsNotAvailableTitle))
+                .setMessage(getString(R.string.StarsNotAvailableText))
+                .setPositiveButton(getString(R.string.OK), null)
+                .show();
     }
 
     public void payAfterConfirmed(MessageObject messageObject, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars form, Utilities.Callback<Boolean> whenDone) {
@@ -1849,11 +1849,11 @@ public class StarsController {
         }
 
         public PendingPaidReactions(
-            MessageId message,
-            MessageObject messageObject,
-            ChatActivity chatActivity,
-            long currentTime,
-            boolean affect
+                MessageId message,
+                MessageObject messageObject,
+                ChatActivity chatActivity,
+                long currentTime,
+                boolean affect
         ) {
             this.message = message;
             this.messageObject = messageObject;
@@ -2094,12 +2094,12 @@ public class StarsController {
     }
 
     public StarsController.PendingPaidReactions sendPaidReaction(
-        MessageObject messageObject,
-        ChatActivity chatActivity,
-        long amount,
-        boolean affect,
-        boolean checkBalance,
-        Long peer
+            MessageObject messageObject,
+            ChatActivity chatActivity,
+            long amount,
+            boolean affect,
+            boolean checkBalance,
+            Long peer
     ) {
         final MessageId key = MessageId.from(messageObject);
         final StarsController s = StarsController.getInstance(currentAccount);
@@ -2338,11 +2338,11 @@ public class StarsController {
         TL_stars.getStarGifts req = new TL_stars.getStarGifts();
         req.hash = hash;
         ConnectionsManager.getInstance(currentAccount).sendRequest(req, (res, err) -> AndroidUtilities.runOnUIThread(() -> {
-           if (res instanceof TL_stars.StarGifts) {
-               whenDone.run((TL_stars.StarGifts) res);
-           } else {
-               whenDone.run(null);
-           }
+            if (res instanceof TL_stars.StarGifts) {
+                whenDone.run((TL_stars.StarGifts) res);
+            } else {
+                whenDone.run(null);
+            }
         }));
     }
 
@@ -2552,9 +2552,9 @@ public class StarsController {
                 }
 
                 MessagesController.getInstance(currentAccount).getMainSettings().edit()
-                    .putBoolean("show_gift_for_" + dialogId, true)
-                    .putBoolean(Calendar.getInstance().get(Calendar.YEAR) + "show_gift_for_" + dialogId, true)
-                    .apply();
+                        .putBoolean("show_gift_for_" + dialogId, true)
+                        .putBoolean(Calendar.getInstance().get(Calendar.YEAR) + "show_gift_for_" + dialogId, true)
+                        .apply();
                 if (LaunchActivity.instance != null && LaunchActivity.instance.getFireworksOverlay() != null) {
                     LaunchActivity.instance.getFireworksOverlay().start(true);
                 }
@@ -2718,9 +2718,9 @@ public class StarsController {
                 }
 
                 MessagesController.getInstance(currentAccount).getMainSettings().edit()
-                    .putBoolean("show_gift_for_" + dialogId, true)
-                    .putBoolean(Calendar.getInstance().get(Calendar.YEAR) + "show_gift_for_" + dialogId, true)
-                    .apply();
+                        .putBoolean("show_gift_for_" + dialogId, true)
+                        .putBoolean(Calendar.getInstance().get(Calendar.YEAR) + "show_gift_for_" + dialogId, true)
+                        .apply();
                 if (LaunchActivity.instance != null && LaunchActivity.instance.getFireworksOverlay() != null) {
                     LaunchActivity.instance.getFireworksOverlay().start(true);
                 }
@@ -2883,9 +2883,9 @@ public class StarsController {
             }
 
             MessagesController.getInstance(currentAccount).getMainSettings().edit()
-                .putBoolean("show_gift_for_" + dialogId, true)
-                .putBoolean(Calendar.getInstance().get(Calendar.YEAR) + "show_gift_for_" + dialogId, true)
-                .apply();
+                    .putBoolean("show_gift_for_" + dialogId, true)
+                    .putBoolean(Calendar.getInstance().get(Calendar.YEAR) + "show_gift_for_" + dialogId, true)
+                    .apply();
             if (LaunchActivity.instance != null && LaunchActivity.instance.getFireworksOverlay() != null) {
                 LaunchActivity.instance.getFireworksOverlay().start(true);
             }
@@ -3250,8 +3250,8 @@ public class StarsController {
                 for (int i = 0; i < r.gifts.size(); ++i) {
                     TL_stars.SavedStarGift savedStarGift = r.gifts.get(i);
                     if (
-                        inputSavedStarGift instanceof TL_stars.TL_inputSavedStarGiftUser && ((TL_stars.TL_inputSavedStarGiftUser) inputSavedStarGift).msg_id == savedStarGift.msg_id ||
-                        inputSavedStarGift instanceof TL_stars.TL_inputSavedStarGiftChat && ((TL_stars.TL_inputSavedStarGiftChat) inputSavedStarGift).saved_id == savedStarGift.saved_id
+                            inputSavedStarGift instanceof TL_stars.TL_inputSavedStarGiftUser && ((TL_stars.TL_inputSavedStarGiftUser) inputSavedStarGift).msg_id == savedStarGift.msg_id ||
+                                    inputSavedStarGift instanceof TL_stars.TL_inputSavedStarGiftChat && ((TL_stars.TL_inputSavedStarGiftChat) inputSavedStarGift).saved_id == savedStarGift.saved_id
                     ) {
                         upgradedGift = savedStarGift;
                         break;
@@ -3342,8 +3342,8 @@ public class StarsController {
         public boolean undoRunning = true;
 
         public PaidMessagesToast(
-            BaseFragment fragment,
-            long dialogId
+                BaseFragment fragment,
+                long dialogId
         ) {
             this.fragment = fragment;
             this.dialogId = dialogId;
@@ -3493,12 +3493,12 @@ public class StarsController {
     private PaidMessagesToast currentPaidMessagesToast;
 
     public void showPaidMessageToast(
-        long dialogId,
-        MessageObject messageObject,
-        long payStars,
-        Utilities.Callback<HashSet<MessageObject>> undo,
-        Runnable send,
-        boolean needsUndo
+            long dialogId,
+            MessageObject messageObject,
+            long payStars,
+            Utilities.Callback<HashSet<MessageObject>> undo,
+            Runnable send,
+            boolean needsUndo
     ) {
         final BaseFragment fragment = LaunchActivity.getSafeLastFragment();
         if (currentPaidMessagesToast != null && (currentPaidMessagesToast.sent || currentPaidMessagesToast.undone)) {
@@ -3583,26 +3583,26 @@ public class StarsController {
             sendingPaidMessagesIds.add(id);
         }
         showPaidMessageToast(
-            msg.getDialogId(),
-            msg,
-            price,
-            /* undo */ (messages) -> {
-                if (!needsUndo) {
-                    return;
-                }
-                SendMessagesHelper.getInstance(currentAccount).cancelSendingMessage(new ArrayList<>(messages));
-            },
-            /* send */ () -> {
-                if (!needsUndo) {
-                    return;
-                }
-                sendingPaidMessagesIds.remove(id);
-                Runnable send = postponedPaidMessages.remove(id);
-                if (send != null) {
-                    send.run();
-                }
-            },
-            needsUndo
+                msg.getDialogId(),
+                msg,
+                price,
+                /* undo */ (messages) -> {
+                    if (!needsUndo) {
+                        return;
+                    }
+                    SendMessagesHelper.getInstance(currentAccount).cancelSendingMessage(new ArrayList<>(messages));
+                },
+                /* send */ () -> {
+                    if (!needsUndo) {
+                        return;
+                    }
+                    sendingPaidMessagesIds.remove(id);
+                    Runnable send = postponedPaidMessages.remove(id);
+                    if (send != null) {
+                        send.run();
+                    }
+                },
+                needsUndo
         );
     }
 
@@ -3690,13 +3690,13 @@ public class StarsController {
             MessagesController.getInstance(currentAccount).loadFullChat(-dialogId, 0, true);
         }
         final CharSequence text = StarsIntroActivity.replaceStars(TextUtils.concat(
-            LocaleController.formatPluralString("PaidMessagesSendErrorToast1", (int) msg.messageOwner.errorAllowedPriceStars),
-            " ",
-            LocaleController.formatPluralString("PaidMessagesSendErrorToast2", (int) msg.messageOwner.errorNewPriceStars)
+                LocaleController.formatPluralString("PaidMessagesSendErrorToast1", (int) msg.messageOwner.errorAllowedPriceStars),
+                " ",
+                LocaleController.formatPluralString("PaidMessagesSendErrorToast2", (int) msg.messageOwner.errorNewPriceStars)
         ));
         BulletinFactory.of(LaunchActivity.getSafeLastFragment())
-            .createSimpleBulletin(R.raw.error, text)
-            .show();
+                .createSimpleBulletin(R.raw.error, text)
+                .show();
     }
 
     public static boolean isEnoughAmount(int currentAccount, AmountUtils.Amount amount) {

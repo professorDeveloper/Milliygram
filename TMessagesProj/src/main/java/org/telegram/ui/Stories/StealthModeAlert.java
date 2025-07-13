@@ -107,7 +107,7 @@ public class StealthModeAlert extends BottomSheet {
         itemCell.textView.setText(LocaleController.getString(R.string.HideRecentViews));
         itemCell.description.setText(LocaleController.getString(R.string.HideRecentViewsDescription));
 
-        linearLayout.addView(itemCell, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT,0, 0, 20, 0, 0));
+        linearLayout.addView(itemCell, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 0, 0, 20, 0, 0));
 
 
         ItemCell itemCell2 = new ItemCell(getContext());
@@ -115,7 +115,7 @@ public class StealthModeAlert extends BottomSheet {
         itemCell2.textView.setText(LocaleController.getString(R.string.HideNextViews));
         itemCell2.description.setText(LocaleController.getString(R.string.HideNextViewsDescription));
 
-        linearLayout.addView(itemCell2, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT,0, 0, 10, 0, 0));
+        linearLayout.addView(itemCell2, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 0, 0, 10, 0, 0));
 
         button = new PremiumButtonView(context, AndroidUtilities.dp(8), true, resourcesProvider);
         button.drawGradient = false;
@@ -123,7 +123,8 @@ public class StealthModeAlert extends BottomSheet {
         button.setIcon(R.raw.unlock_icon);
         ScaleStateListAnimator.apply(button);
         TLRPC.User user = UserConfig.getInstance(currentAccount).getCurrentUser();
-        if (!user.premium) {
+
+        if (!UserConfig.getInstance(currentAccount).isPremium()) {
             button.setIcon(R.raw.unlock_icon);
             button.setButton(LocaleController.getString(R.string.UnlockStealthMode), v -> {
                 dismiss();
@@ -142,7 +143,7 @@ public class StealthModeAlert extends BottomSheet {
         setCustomView(frameLayout);
 
         button.setOnClickListener(v -> {
-            if (!user.premium) {
+            if (!UserConfig.getInstance(currentAccount).isPremium()) {
                 dismiss();
                 BaseFragment baseFragment = LaunchActivity.getLastFragment();
                 if (baseFragment != null) {
@@ -165,7 +166,7 @@ public class StealthModeAlert extends BottomSheet {
                     req.past = true;
                     stealthMode = new TL_stories.TL_storiesStealthMode();
                     stealthMode.flags |= 1 + 2;
-                    stealthMode.cooldown_until_date = ConnectionsManager.getInstance(currentAccount).getCurrentTime() +MessagesController.getInstance(currentAccount).stealthModeCooldown;
+                    stealthMode.cooldown_until_date = ConnectionsManager.getInstance(currentAccount).getCurrentTime() + MessagesController.getInstance(currentAccount).stealthModeCooldown;
                     stealthMode.active_until_date = ConnectionsManager.getInstance(currentAccount).getCurrentTime() + MessagesController.getInstance(currentAccount).stealthModeFuture;
                     storiesController.setStealthMode(stealthMode);
                     ConnectionsManager.getInstance(currentAccount).sendRequest(req, (response, error) -> AndroidUtilities.runOnUIThread(() -> {
@@ -173,7 +174,8 @@ public class StealthModeAlert extends BottomSheet {
                     }));
                     try {
                         containerView.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP);
-                    } catch (Exception ignored) {}
+                    } catch (Exception ignored) {
+                    }
                     dismiss();
                     if (type == TYPE_FROM_STORIES) {
                         showStealthModeEnabledBulletin();

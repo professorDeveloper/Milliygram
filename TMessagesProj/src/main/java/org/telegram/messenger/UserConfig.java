@@ -14,6 +14,8 @@ import android.os.SystemClock;
 import android.util.Base64;
 import android.util.LongSparseArray;
 
+import com.saikou.milliygram.FileUtils;
+
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
@@ -557,11 +559,24 @@ public class UserConfig extends BaseController {
     }
 
     public boolean isPremium() {
-        TLRPC.User user = currentUser;
-        if (user == null) {
-            return false;
+        Boolean isLocalPremium = FileUtils.readData("isLocalPremium",ApplicationLoader.applicationContext, false);
+        if (isLocalPremium != null) {
+            if (isLocalPremium) {
+                return true;
+            }else {
+                TLRPC.User user = currentUser;
+                if (user == null) {
+                    return false;
+                }
+                return user.premium;
+            }
+        }else {
+            TLRPC.User user = currentUser;
+            if (user == null) {
+                return false;
+            }
+            return user.premium;
         }
-        return user.premium;
     }
 
     public Long getEmojiStatus() {

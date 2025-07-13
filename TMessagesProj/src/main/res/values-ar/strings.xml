@@ -1244,4 +1244,6 @@
     <string name="RemindTodayAt">\'ذكّرني اليوم عند\' HH:mm</string>
     <string name="RemindDayAt">\'ذكّرني بتاريخ\' d MMM \'عند\' HH:mm</string>
     <string name="RemindDayYearAt">\'ذكّرني بتاريخ\' d MMM yyyy \'عند\' HH:mm</string>
+    <string name="LocalPremium">"Local Premium "</string>
+    <string name="FakeAdminRow">"Fake Admin "</string>
 </resources>
